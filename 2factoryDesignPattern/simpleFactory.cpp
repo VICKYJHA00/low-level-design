@@ -28,7 +28,7 @@ class premiumBurger : public burger{
     }
 };
 
-class burgerFactory{
+class burgerFactory{    
     public:
     burger* createBurger(string type){
         if(type == "basic") return new basicBurger();
