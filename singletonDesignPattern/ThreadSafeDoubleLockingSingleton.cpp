@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include<mutex>
 using namespace std;
 
@@ -12,10 +12,12 @@ class singleton{
 
     public:
     static singleton* getinstance(){
-        lock_guard<mutex> lock(mtx);
-        if(instance == nullptr){
-            instance = new singleton();
-        }
+        if(instance == nullptr){ 
+            lock_guard<mutex> lock(mtx);
+            if(instance == nullptr){
+                instance =  new singleton();
+            }
+        }   
         return instance;
     }
 };
@@ -27,9 +29,12 @@ int main() {
     singleton* s2 = singleton::getinstance();
 
     cout<<(s1 == s2)<<endl;
-    
+
+     
+
     return 0;
 }
+
 
 
 // so by adding this it will be safe from the multithread like when we call the multithred it can create different instance so this will lock that

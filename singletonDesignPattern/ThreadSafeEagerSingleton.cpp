@@ -12,15 +12,12 @@ private:
 
 public:
     static Singleton* getInstance() {
-        if(instance == nullptr) {
-            instance = new Singleton();
-        }
         return instance;
     }
 };
 
 // Initialize static member
-Singleton* Singleton::instance = nullptr;
+Singleton* Singleton::instance = new Singleton();
 
 int main() {
     Singleton* s1 = Singleton::getInstance();
