@@ -52,7 +52,7 @@ public:
 
     void uploadvideos(const string& title){
         latestVideo = title;
-        cout<<"\n[" << name << "uploaded \ " " " << title << "\"]\n";
+        cout<<"\n[" << name << "uploaded \n " " " << title << "\"]\n";
         notifySubsriber();
     }
 
@@ -94,4 +94,6 @@ int main(){
 
     return 0;
 }
+
+
 
