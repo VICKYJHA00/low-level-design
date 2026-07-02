@@ -2,6 +2,7 @@ interface Character{
     String getAbility();
 }
 
+
 class Mario implements Character{
     @Override
     public String getAbility(){
