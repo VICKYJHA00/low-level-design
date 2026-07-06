@@ -31,6 +31,33 @@ class fan{
 
 }
 
+class ac{
+    public void on(){
+        System.out.println("ac is on");
+    }
+
+    public void off(){
+        System.out.println("ac is off");
+    }
+}
+
+class acCommand implements Command{
+    private ac a;
+
+    public acCommand(ac a){
+        this.a = a;
+    }
+
+    public void execute(){
+        a.on();
+    }
+
+    public void undo(){
+        a.off();
+    }
+
+}
+
 class lightCommand implements Command{
 
     private light l;
@@ -107,11 +134,13 @@ public class commandDesign{
     public static void main(String[] args){
         light livingLight = new light();
         fan ceilingFan = new fan();
+        ac hallAc = new ac();
 
         remoteContoller remote = new remoteContoller();
 
         remote.setCommand(0,new lightCommand(livingLight));
         remote.setCommand(1, new fanCommand(ceilingFan));
+        remote.setCommand(2, new acCommand(hallAc));
 
         System.out.println("-- toggling light button");
         remote.pressButton(0);
