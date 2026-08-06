@@ -47,16 +47,18 @@ public class protectionProxy {
     public static void main(String[] args) {
         User user1 = new User("vicky", true);
         User user2 = new User("ashish", false);
+        // user1.premiumMembership = false;
 
 
         System.out.println("Ashish aka Non-premium user tries to Unlock the Pdf... ");
         IDocumentReader docReader = new DocumentProxy(user2);
         docReader.unlockPDF("protected_document.pdf", "secret123");
 
-        System.out.println("Ashish aka Non-premium user tries to Unlock the Pdf... ");
+    
+        System.out.println("\nVicky aka Premium user tries to Unlock the Pdf... ");
         docReader = new DocumentProxy(user1);
         docReader.unlockPDF("protected_document.pdf", "secret123");
         
     }
-    
+
 }
