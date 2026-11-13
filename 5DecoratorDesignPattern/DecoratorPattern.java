@@ -10,12 +10,15 @@ class Mario implements Character{
     }
 }
 
-abstract class CharacterDecorator implements Character{
+abstract class CharacterDecorator implements Character{vdcdc
     protected Character character;
 
     public CharacterDecorator(Character c){
         this.character = c;
     }
+
+
+    
 
 }
 

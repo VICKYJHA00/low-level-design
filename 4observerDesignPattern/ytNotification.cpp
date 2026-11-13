@@ -18,7 +18,11 @@ public:
     virtual void unsubsribe(Isubscriber* subsriber) = 0;
     virtual void notifySubsriber() = 0;
     virtual ~Ichannel() {}
+
+    
 };
+
+
 
 class Channel :  public Ichannel{
 private:
@@ -61,6 +65,8 @@ public:
     }
     
 };
+
+
 
 class Subscriber : public Isubscriber{
     private :
